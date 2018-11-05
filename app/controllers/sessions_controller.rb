@@ -27,7 +27,7 @@ before_action :current_user, only: [:edit, :update]
     user_params = params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :user_id)
     @user.update(user_params)
     flash[:success] = "Informations saved"
-    redirect_to "/"
+    redirect_to @user
 end
 
 
